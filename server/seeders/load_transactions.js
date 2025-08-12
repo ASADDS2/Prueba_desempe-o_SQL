@@ -25,7 +25,7 @@ export async function loadTransactionsOnDatabase() {
                     const [result] = await pool.query(sql,[transactions])
 
                     console.log(`${result.affectedRows} transactions was inserted`);
-                    
+                    resolve()
                 } catch (error) {
                 console.error('Error trying transactions', error.message);
                 reject(error)

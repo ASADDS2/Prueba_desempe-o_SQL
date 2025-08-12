@@ -1,3 +1,4 @@
+import { loadInvoicesOnDatabase } from "./load_invoices.js"
 import { loadTransactionsOnDatabase } from "./load_transactions.js"
 import { loadUsersOnDatabase } from "./load_users.js"
 
@@ -6,7 +7,8 @@ import { loadUsersOnDatabase } from "./load_users.js"
         console.log('Running seeders')
         await loadUsersOnDatabase()
         await loadTransactionsOnDatabase()
-
+        await loadInvoicesOnDatabase()
+        
         console.log('Every seeders succesfully conected');
     } catch (error) {
         console.error('Error doing seeders', error.message); 
