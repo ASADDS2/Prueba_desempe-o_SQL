@@ -1,9 +1,11 @@
+import { loadTransactionsOnDatabase } from "./load_transactions.js"
 import { loadUsersOnDatabase } from "./load_users.js"
 
 (async () => {
     try {
         console.log('Running seeders')
         await loadUsersOnDatabase()
+        await loadTransactionsOnDatabase()
 
         console.log('Every seeders succesfully conected');
     } catch (error) {
